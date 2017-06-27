@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">MyFirstApp</string>
     <string name="action_settings">Settings</string>
+
+    <string name="label_text">初アプリ！</string>
+    <string name="label_tapped_text">めでたい！！</string>
+    <string name="button_text">祝</string>
 </resources>
