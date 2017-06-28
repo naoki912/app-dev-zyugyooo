@@ -1,7 +1,7 @@
 # 授業のやつ
 
-- [x] MyFirstApp
-- [ ] ShingoHaNaniiro
+- [x] [MyFirstApp](android/MyFirstApp)
+- [ ] [ShingoHaNaniiro](android/ShingoHaNaniiro)
 - [ ] AutoLayout
 - [ ] Cowbell
 - [ ] WinePiano
