@@ -1,6 +1,6 @@
 # 授業のやつ
 
-- [ ] MyFirstApp
+- [x] MyFirstApp
 - [ ] ShingoHaNaniiro
 - [ ] AutoLayout
 - [ ] Cowbell
