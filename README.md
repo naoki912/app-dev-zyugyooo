@@ -16,7 +16,8 @@
 - [x] [ShingoHaNaniiro](android/ShingoHaNaniiro)
   - Nexus5Xでのみ動作とレイアウトを確認
 - [ ] AutoLayout
-- [ ] Cowbell
+- [x] [Cowbell](android/Cowbell)
+  - Nexus5Xでのみ動作とレイアウトを確認
 - [ ] WinePiano
 - [ ] Calculator
 - [ ] VeseKentei
