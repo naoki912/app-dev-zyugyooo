@@ -9,9 +9,8 @@
     tools:showIn="@layout/activity_main"
     tools:context="soft.hnron.shingohananiiro.MainActivityFragment">
 
-
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/signalImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/signal_blue"

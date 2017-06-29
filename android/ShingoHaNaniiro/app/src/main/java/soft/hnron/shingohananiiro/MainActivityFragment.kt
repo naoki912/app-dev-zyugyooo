@@ -9,9 +9,18 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import java.util.*
 
 
 class MainActivityFragment : Fragment() {
+
+    private var BLUE_SIGNAL: Int = 0
+    private var YELLOW_SIGNAL: Int = 1
+    private var RED_SIGNAL: Int = 2
+
+    private var mCurrentSignal: Int = 0
+
+    private var mSignalImageView: ImageView? = null
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -25,29 +34,60 @@ class MainActivityFragment : Fragment() {
         val yellowButton = view?.findViewById<ImageButton>(R.id.yellowButton)
         val redButton = view?.findViewById<ImageButton>(R.id.redButton)
 
-        val blueImage = resources.getDrawable(R.drawable.signal_blue)
-        val yellowImage = resources.getDrawable(R.drawable.signal_yellow)
-        val redImage = resources.getDrawable(R.drawable.signal_red)
+        val resultTextView = view?.findViewById<TextView>(R.id.resultTextView)
 
-        val imageView = view?.findViewById<ImageView>(R.id.imageView)
-        imageView?.setImageDrawable(redImage)
+        mSignalImageView = view?.findViewById<ImageView>(R.id.signalImageView)
+        randomSignal()
 
         blueButton?.setOnClickListener { v ->
-            val resultTextView = view.findViewById<TextView>(R.id.resultTextView)
-            resultTextView.setTextColor(Color.BLUE)
-            resultTextView.setText(R.string.result_blue)
+            resultTextView?.setTextColor(Color.BLUE)
+
+            if (mCurrentSignal == BLUE_SIGNAL) {
+                resultTextView?.text = resources.getString(R.string.correct)
+            } else {
+                resultTextView?.text = resources.getString(R.string.incorrect)
+            }
+
+            randomSignal()
         }
 
         yellowButton?.setOnClickListener { v ->
-            val resultTextView = view.findViewById<TextView>(R.id.resultTextView)
-            resultTextView.setTextColor(Color.YELLOW)
-            resultTextView.setText(R.string.result_yellow)
+            resultTextView?.setTextColor(Color.YELLOW)
+
+            if (mCurrentSignal == YELLOW_SIGNAL) {
+                resultTextView?.text = resources.getString(R.string.correct)
+            } else {
+                resultTextView?.text = resources.getString(R.string.incorrect)
+            }
+
+            randomSignal()
         }
 
         redButton?.setOnClickListener { v ->
-            val resultTextView = view.findViewById<TextView>(R.id.resultTextView)
-            resultTextView.setTextColor(Color.RED)
-            resultTextView.setText(R.string.result_red)
+            resultTextView?.setTextColor(Color.RED)
+
+            if (mCurrentSignal == RED_SIGNAL) {
+                resultTextView?.text = resources.getString(R.string.correct)
+            } else {
+                resultTextView?.text = resources.getString(R.string.incorrect)
+            }
+
+            randomSignal()
+        }
+    }
+
+    fun randomSignal() {
+        val randomNumber = Random().nextInt(3)
+
+        if (randomNumber == BLUE_SIGNAL) {
+            mCurrentSignal = BLUE_SIGNAL
+            mSignalImageView?.setImageResource(R.drawable.signal_blue)
+        } else if (randomNumber == YELLOW_SIGNAL) {
+            mCurrentSignal = YELLOW_SIGNAL
+            mSignalImageView?.setImageResource(R.drawable.signal_yellow)
+        } else if (randomNumber == RED_SIGNAL) {
+            mCurrentSignal = RED_SIGNAL
+            mSignalImageView?.setImageResource(R.drawable.signal_red)
         }
     }
 }

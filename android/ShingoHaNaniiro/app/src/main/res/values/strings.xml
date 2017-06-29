@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">ShingoHaNaniiro</string>
+
     <string name="text">しんごうのいろはなにいろ？</string>
+
     <string name="result_red">しんごうはあかいろ！</string>
     <string name="result_blue">しんごうはあおいろ！</string>
     <string name="result_yellow">しんごうはきいろ！</string>
+
+    <string name="correct">せいかい！</string>
+    <string name="incorrect">まちがい！</string>
 </resources>
