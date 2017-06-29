@@ -30,14 +30,14 @@ class MainActivityFragment : Fragment() {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val blueButton = view?.findViewById<ImageButton>(R.id.blueButton)
-        val yellowButton = view?.findViewById<ImageButton>(R.id.yellowButton)
-        val redButton = view?.findViewById<ImageButton>(R.id.redButton)
+        mSignalImageView = view?.findViewById<ImageView>(R.id.signalImageView)
+        randomSignal()
 
         val resultTextView = view?.findViewById<TextView>(R.id.resultTextView)
 
-        mSignalImageView = view?.findViewById<ImageView>(R.id.signalImageView)
-        randomSignal()
+        val blueButton = view?.findViewById<ImageButton>(R.id.blueButton)
+        val yellowButton = view?.findViewById<ImageButton>(R.id.yellowButton)
+        val redButton = view?.findViewById<ImageButton>(R.id.redButton)
 
         blueButton?.setOnClickListener { v ->
             resultTextView?.setTextColor(Color.BLUE)
