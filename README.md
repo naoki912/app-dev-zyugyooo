@@ -12,7 +12,9 @@
 ## アプリ一覧
 
 - [x] [MyFirstApp](android/MyFirstApp)
-- [ ] [ShingoHaNaniiro](android/ShingoHaNaniiro)
+  - Nexus5XとNexus7で動作とレイアウトを確認
+- [x] [ShingoHaNaniiro](android/ShingoHaNaniiro)
+  - Nexus5Xでのみ動作とレイアウトを確認
 - [ ] AutoLayout
 - [ ] Cowbell
 - [ ] WinePiano
