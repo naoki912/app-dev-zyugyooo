@@ -15,7 +15,7 @@
 - [x] [ShingoHaNaniiro](android/ShingoHaNaniiro)
 - [ ] AutoLayout
 - [x] [Cowbell](android/Cowbell)
-- [x] WinePiano(android/WinePiano)
+- [x] [WinePiano](android/WinePiano)
 - [ ] Calculator
 - [ ] VeseKentei
 - [ ] NewsReader
