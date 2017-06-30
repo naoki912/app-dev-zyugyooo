@@ -23,7 +23,7 @@ class MainActivityFragment : Fragment() {
             val textView = view.findViewById<TextView>(R.id.text_view)
             val button = view.findViewById<Button>(R.id.button)
 
-            button.setOnClickListener { view ->
+            button.setOnClickListener {
                 textView.text = resources.getString(R.string.label_tapped_text)
             }
         }

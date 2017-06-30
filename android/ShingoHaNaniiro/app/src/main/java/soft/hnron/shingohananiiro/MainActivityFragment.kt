@@ -39,7 +39,7 @@ class MainActivityFragment : Fragment() {
         val yellowButton = view?.findViewById<ImageButton>(R.id.yellowButton)
         val redButton = view?.findViewById<ImageButton>(R.id.redButton)
 
-        blueButton?.setOnClickListener { v ->
+        blueButton?.setOnClickListener {
             resultTextView?.setTextColor(Color.BLUE)
 
             if (mCurrentSignal == BLUE_SIGNAL) {
@@ -51,7 +51,7 @@ class MainActivityFragment : Fragment() {
             randomSignal()
         }
 
-        yellowButton?.setOnClickListener { v ->
+        yellowButton?.setOnClickListener {
             resultTextView?.setTextColor(Color.YELLOW)
 
             if (mCurrentSignal == YELLOW_SIGNAL) {
@@ -63,7 +63,7 @@ class MainActivityFragment : Fragment() {
             randomSignal()
         }
 
-        redButton?.setOnClickListener { v ->
+        redButton?.setOnClickListener {
             resultTextView?.setTextColor(Color.RED)
 
             if (mCurrentSignal == RED_SIGNAL) {

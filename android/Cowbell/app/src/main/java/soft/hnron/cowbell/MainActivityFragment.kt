@@ -21,7 +21,7 @@ class MainActivityFragment : Fragment() {
         val mediaPlayer = MediaPlayer.create(context, R.raw.cowbell)
 
         val imageButton = view?.findViewById<ImageButton>(R.id.imageButton)
-        imageButton?.setOnClickListener { v: View? ->
+        imageButton?.setOnClickListener {
 
             // 音楽ファイルの再生時間が2〜3秒ほどあるため、
             // 一度seekを0にしないと連打した時に音がならない
