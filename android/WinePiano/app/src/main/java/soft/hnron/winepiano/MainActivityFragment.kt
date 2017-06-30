@@ -1,5 +1,6 @@
 package soft.hnron.winepiano
 
+import android.animation.AnimatorInflater
 import android.media.MediaPlayer
 import android.net.Uri
 import android.support.v4.app.Fragment
@@ -45,6 +46,10 @@ class MainActivityFragment : Fragment() {
             mGlassPlayer.start()
         }
 
+        val flippingAnimator = AnimatorInflater.loadAnimator(context, R.animator.flipping)
+        flippingAnimator.setTarget(bottomRightGlassButton)
+        flippingAnimator.duration = 500
+
         val wineImage = ResourcesCompat.getDrawable(resources, R.drawable.wine, null)!!
 
         val rotateAnimation = RotateAnimation(
@@ -66,7 +71,7 @@ class MainActivityFragment : Fragment() {
 
         bottomRightGlassButton?.setOnClickListener {
             playGlassSound("android.resource://soft.hnron.winepiano/raw/bottom_right")
-            // 反転
+            flippingAnimator.start()
         }
 
         bottomCenterGlassButton?.setOnClickListener {
