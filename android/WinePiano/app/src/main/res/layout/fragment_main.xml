@@ -9,7 +9,7 @@
     tools:showIn="@layout/activity_main">
 
     <ImageButton
-        android:id="@+id/bottom_left_glass"
+        android:id="@+id/bottom_left_glass_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@null"
@@ -23,7 +23,7 @@
         app:layout_constraintVertical_bias="0.953" />
 
     <ImageButton
-        android:id="@+id/bottom_center_glass"
+        android:id="@+id/bottom_center_glass_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@null"
@@ -33,13 +33,13 @@
         android:layout_marginBottom="8dp"
         app:srcCompat="@drawable/wine"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/bottom_left_glass"
-        app:layout_constraintRight_toLeftOf="@+id/bottom_right_glass"
+        app:layout_constraintLeft_toRightOf="@+id/bottom_left_glass_button"
+        app:layout_constraintRight_toLeftOf="@+id/bottom_right_glass_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.953" />
 
     <ImageButton
-        android:id="@+id/bottom_right_glass"
+        android:id="@+id/bottom_right_glass_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@null"
@@ -53,7 +53,7 @@
         app:layout_constraintVertical_bias="0.953" />
 
     <ImageButton
-        android:id="@+id/upper_left_glass"
+        android:id="@+id/upper_left_glass_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@null"
@@ -67,7 +67,7 @@
         app:layout_constraintVertical_bias="0.046" />
 
     <ImageButton
-        android:id="@+id/upper_right_glass"
+        android:id="@+id/upper_right_glass_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@null"
