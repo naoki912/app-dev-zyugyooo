@@ -9,7 +9,7 @@
     tools:showIn="@layout/activity_main">
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/bottom_left_glass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@null"
@@ -20,26 +20,26 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
-        app:layout_constraintVertical_bias="0.046" />
+        app:layout_constraintVertical_bias="0.953" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/bottom_center_glass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@null"
-        app:srcCompat="@drawable/wine"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
-        app:layout_constraintVertical_bias="0.046"
-        app:layout_constraintLeft_toRightOf="@+id/imageButton"
         android:layout_marginLeft="8dp"
-        app:layout_constraintRight_toLeftOf="@+id/imageButton3"
-        android:layout_marginRight="8dp" />
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/bottom_left_glass"
+        app:layout_constraintRight_toLeftOf="@+id/bottom_right_glass"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.953"
+        app:srcCompat="@drawable/wine" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/bottom_right_glass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@null"
@@ -48,35 +48,35 @@
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
-        app:layout_constraintVertical_bias="0.046"
+        app:layout_constraintVertical_bias="0.953"
         android:layout_marginRight="137dp"
         app:layout_constraintRight_toRightOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/upper_left_glass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@null"
-        app:srcCompat="@drawable/wine"
-        android:layout_marginLeft="218dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="218dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintVertical_bias="0.953" />
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.046"
+        app:srcCompat="@drawable/wine" />
 
     <ImageButton
-        android:id="@+id/imageButton5"
+        android:id="@+id/upper_right_glass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@null"
-        app:srcCompat="@drawable/wine"
-        android:layout_marginRight="219dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="219dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintVertical_bias="0.953" />
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.046"
+        app:srcCompat="@drawable/wine" />
 </android.support.constraint.ConstraintLayout>
