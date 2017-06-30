@@ -12,13 +12,10 @@
 ## アプリ一覧
 
 - [x] [MyFirstApp](android/MyFirstApp)
-  - Nexus5XとNexus7で動作とレイアウトを確認
 - [x] [ShingoHaNaniiro](android/ShingoHaNaniiro)
-  - Nexus5Xでのみ動作とレイアウトを確認
 - [ ] AutoLayout
 - [x] [Cowbell](android/Cowbell)
-  - Nexus5Xでのみ動作とレイアウトを確認
-- [ ] WinePiano
+- [x] WinePiano(android/WinePiano)
 - [ ] Calculator
 - [ ] VeseKentei
 - [ ] NewsReader
