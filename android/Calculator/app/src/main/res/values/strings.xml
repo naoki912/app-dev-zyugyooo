@@ -16,5 +16,5 @@
     <string name="times">*</string>
     <string name="divide">/</string>
     <string name="equal">=</string>
-    <string name="c">C</string>
+    <string name="clear">C</string>
 </resources>

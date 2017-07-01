@@ -8,7 +8,7 @@
     tools:showIn="@layout/activity_main">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/result_text_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
@@ -50,6 +50,7 @@
                 android:layout_height="100dp"
                 android:layout_weight="1"
                 style="@style/button"
+                android:tag="@string/seven"
                 android:text="@string/seven" />
 
             <Button
@@ -58,6 +59,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 style="@style/button"
+                android:tag="@string/eight"
                 android:text="@string/eight" />
 
             <Button
@@ -66,6 +68,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 style="@style/button"
+                android:tag="@string/nine"
                 android:text="@string/nine" />
 
             <Button
@@ -74,6 +77,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 style="@style/button"
+                android:tag="@string/times"
                 android:text="@string/times" />
         </TableRow>
 
@@ -87,6 +91,7 @@
                 android:layout_height="100dp"
                 android:layout_weight="1"
                 style="@style/button"
+                android:tag="@string/four"
                 android:text="@string/four" />
 
             <Button
@@ -95,6 +100,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 style="@style/button"
+                android:tag="@string/five"
                 android:text="@string/five" />
 
             <Button
@@ -103,6 +109,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 style="@style/button"
+                android:tag="@string/six"
                 android:text="@string/six" />
 
             <Button
@@ -111,6 +118,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 style="@style/button"
+                android:tag="@string/minus"
                 android:text="@string/minus" />
         </TableRow>
 
@@ -124,6 +132,7 @@
                 android:layout_height="100dp"
                 android:layout_weight="1"
                 style="@style/button"
+                android:tag="@string/one"
                 android:text="@string/one" />
 
             <Button
@@ -132,6 +141,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 style="@style/button"
+                android:tag="@string/two"
                 android:text="@string/two" />
 
             <Button
@@ -140,6 +150,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 style="@style/button"
+                android:tag="@string/three"
                 android:text="@string/three" />
 
             <Button
@@ -148,6 +159,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 style="@style/button"
+                android:tag="@string/plus"
                 android:text="@string/plus" />
         </TableRow>
 
@@ -161,15 +173,17 @@
                 android:layout_height="100dp"
                 android:layout_weight="1"
                 style="@style/button"
+                android:tag="@string/zero"
                 android:text="@string/zero" />
 
             <Button
-                android:id="@+id/button_c"
+                android:id="@+id/button_clear"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 style="@style/button"
-                android:text="@string/c" />
+                android:tag="@string/clear"
+                android:text="@string/clear" />
 
             <Button
                 android:id="@+id/button_divide"
@@ -177,6 +191,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 style="@style/button"
+                android:tag="@string/divide"
                 android:text="@string/divide" />
 
             <Button
@@ -185,6 +200,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 style="@style/button"
+                android:tag="@string/equal"
                 android:text="@string/equal" />
         </TableRow>
 
