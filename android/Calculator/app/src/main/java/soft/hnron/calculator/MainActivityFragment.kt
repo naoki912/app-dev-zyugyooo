@@ -8,15 +8,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import java.math.BigDecimal
+import java.math.RoundingMode
 
 class MainActivityFragment : Fragment() {
 
     private var mResultTextView: TextView? = null
 
-    private var mLeftNumber: Double = 0.0
-    private var mRightNumber: Double = 0.0
-    private var mResult: Double = 0.0
-    private var mOperatorId: String = ""
+    private var mLeftNumber = BigDecimal.ZERO
+    private var mRightNumber = BigDecimal.ZERO
+    private var mResult = BigDecimal.ZERO
+    private var mOperatorId = ""
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -45,16 +47,16 @@ class MainActivityFragment : Fragment() {
         val buttonEqual = view.findViewById<Button>(R.id.button_equal)!!
         val buttonClear = view.findViewById<Button>(R.id.button_clear)!!
 
-        button0.setOnClickListener { v -> numberButtonTapped(v.tag.toString().toDouble()) }
-        button1.setOnClickListener { v -> numberButtonTapped(v.tag.toString().toDouble()) }
-        button2.setOnClickListener { v -> numberButtonTapped(v.tag.toString().toDouble()) }
-        button3.setOnClickListener { v -> numberButtonTapped(v.tag.toString().toDouble()) }
-        button4.setOnClickListener { v -> numberButtonTapped(v.tag.toString().toDouble()) }
-        button5.setOnClickListener { v -> numberButtonTapped(v.tag.toString().toDouble()) }
-        button6.setOnClickListener { v -> numberButtonTapped(v.tag.toString().toDouble()) }
-        button7.setOnClickListener { v -> numberButtonTapped(v.tag.toString().toDouble()) }
-        button8.setOnClickListener { v -> numberButtonTapped(v.tag.toString().toDouble()) }
-        button9.setOnClickListener { v -> numberButtonTapped(v.tag.toString().toDouble()) }
+        button0.setOnClickListener { v -> numberButtonTapped(BigDecimal(v.tag.toString())) }
+        button1.setOnClickListener { v -> numberButtonTapped(BigDecimal(v.tag.toString())) }
+        button2.setOnClickListener { v -> numberButtonTapped(BigDecimal(v.tag.toString())) }
+        button3.setOnClickListener { v -> numberButtonTapped(BigDecimal(v.tag.toString())) }
+        button4.setOnClickListener { v -> numberButtonTapped(BigDecimal(v.tag.toString())) }
+        button5.setOnClickListener { v -> numberButtonTapped(BigDecimal(v.tag.toString())) }
+        button6.setOnClickListener { v -> numberButtonTapped(BigDecimal(v.tag.toString())) }
+        button7.setOnClickListener { v -> numberButtonTapped(BigDecimal(v.tag.toString())) }
+        button8.setOnClickListener { v -> numberButtonTapped(BigDecimal(v.tag.toString())) }
+        button9.setOnClickListener { v -> numberButtonTapped(BigDecimal(v.tag.toString())) }
         buttonPlus.setOnClickListener { v -> operatorButtonTapped(v.tag.toString()) }
         buttonMinus.setOnClickListener { v -> operatorButtonTapped(v.tag.toString()) }
         buttonTimes.setOnClickListener { v -> operatorButtonTapped(v.tag.toString()) }
@@ -63,9 +65,9 @@ class MainActivityFragment : Fragment() {
         buttonClear.setOnClickListener { clearButtonTapped() }
     }
 
-    fun numberButtonTapped(number: Double) {
+    fun numberButtonTapped(number: BigDecimal) {
         Log.d("numberButtonTapped", number.toString())
-        mRightNumber = mRightNumber * 10 + number
+        mRightNumber = mRightNumber.times(BigDecimal.TEN).add(number)
 
         updateDisplay(mRightNumber)
     }
@@ -74,7 +76,7 @@ class MainActivityFragment : Fragment() {
         Log.d("operatorButtonTapped", operator)
         mOperatorId = operator
         mLeftNumber = mRightNumber
-        mRightNumber = 0.0
+        mRightNumber = BigDecimal.ZERO
     }
 
     fun equalButtonTapped() {
@@ -82,13 +84,18 @@ class MainActivityFragment : Fragment() {
 
         when (mOperatorId) {
             resources.getString(R.string.plus) ->
-                mResult = mLeftNumber + mRightNumber
+                mResult = mLeftNumber.add(mRightNumber)
             resources.getString(R.string.minus) ->
-                mResult = mLeftNumber - mRightNumber
+                mResult = mLeftNumber.minus(mRightNumber)
             resources.getString(R.string.times) ->
-                mResult = mLeftNumber * mRightNumber
+                mResult = mLeftNumber.times(mRightNumber)
             resources.getString(R.string.divide) ->
-                mResult = mLeftNumber / mRightNumber
+                if (mRightNumber.compareTo(BigDecimal.ZERO) == 0) {
+                    updateDisplay("Infinity")
+                    return
+                } else {
+                    mResult = mLeftNumber.divide(mRightNumber, 6, RoundingMode.HALF_UP)
+                }
         }
 
         Log.d("equalButtonTapped", "mLeftNumber: " + mLeftNumber)
@@ -98,21 +105,25 @@ class MainActivityFragment : Fragment() {
 
         mRightNumber = mResult
 
-        mResultTextView?.text = mResult.toString()
+        updateDisplay(mResult)
     }
 
     fun clearButtonTapped() {
         Log.d("clearButtonTapped", "clear")
 
-        mRightNumber = 0.0
-        mRightNumber = 0.0
-        mResult = 0.0
+        mRightNumber = BigDecimal.ZERO
+        mRightNumber = BigDecimal.ZERO
+        mResult = BigDecimal.ZERO
         mOperatorId = ""
 
-        updateDisplay(0.0)
+        updateDisplay(BigDecimal.ZERO)
     }
 
-    fun updateDisplay(number: Double) {
-        mResultTextView?.text = String.format("%.0f", number)
+    fun updateDisplay(number: BigDecimal) {
+        mResultTextView?.text = number.toPlainString()
+    }
+
+    fun updateDisplay(string: String) {
+        mResultTextView?.text = string
     }
 }
