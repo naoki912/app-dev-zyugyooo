@@ -1,8 +1,8 @@
 package soft.hnron.calculator
 
+import android.graphics.Typeface
 import android.support.v4.app.Fragment
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -63,25 +63,39 @@ class MainActivityFragment : Fragment() {
         buttonDivide.setOnClickListener { v -> operatorButtonTapped(v.tag.toString()) }
         buttonEqual.setOnClickListener { equalButtonTapped() }
         buttonClear.setOnClickListener { clearButtonTapped() }
+
+        val typeface = Typeface.createFromAsset(context.assets, "font/lets_go_digital_regular.ttf")
+        button0.typeface = typeface
+        button1.typeface = typeface
+        button2.typeface = typeface
+        button3.typeface = typeface
+        button4.typeface = typeface
+        button5.typeface = typeface
+        button6.typeface = typeface
+        button7.typeface = typeface
+        button8.typeface = typeface
+        button9.typeface = typeface
+        buttonPlus.typeface = typeface
+        buttonMinus.typeface = typeface
+        buttonTimes.typeface = typeface
+        buttonDivide.typeface = typeface
+        buttonEqual.typeface = typeface
+        buttonClear.typeface = typeface
     }
 
     fun numberButtonTapped(number: BigDecimal) {
-        Log.d("numberButtonTapped", number.toString())
         mRightNumber = mRightNumber.times(BigDecimal.TEN).add(number)
 
         updateDisplay(mRightNumber)
     }
 
     fun operatorButtonTapped(operator: String) {
-        Log.d("operatorButtonTapped", operator)
         mOperatorId = operator
         mLeftNumber = mRightNumber
         mRightNumber = BigDecimal.ZERO
     }
 
     fun equalButtonTapped() {
-        Log.d("equalButtonTapped", "equal")
-
         when (mOperatorId) {
             resources.getString(R.string.plus) ->
                 mResult = mLeftNumber.add(mRightNumber)
@@ -98,19 +112,12 @@ class MainActivityFragment : Fragment() {
                 }
         }
 
-        Log.d("equalButtonTapped", "mLeftNumber: " + mLeftNumber)
-        Log.d("equalButtonTapped", "mOperatorId: " + mOperatorId)
-        Log.d("equalButtonTapped", "mRightNumber: " + mRightNumber)
-        Log.d("equalButtonTapped", "mResult: " + mResult)
-
         mRightNumber = mResult
 
         updateDisplay(mResult)
     }
 
     fun clearButtonTapped() {
-        Log.d("clearButtonTapped", "clear")
-
         mRightNumber = BigDecimal.ZERO
         mRightNumber = BigDecimal.ZERO
         mResult = BigDecimal.ZERO
