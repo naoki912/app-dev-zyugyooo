@@ -19,7 +19,7 @@ macとiOS環境を持っていないのでAndroidで実装
 - [ ] AutoLayout
 - [x] [Cowbell](android/Cowbell)
 - [x] [WinePiano](android/WinePiano)
-- [ ] Calculator
+- [x] [Calculator](android/Calculator)
 - [ ] VeseKentei
 - [ ] NewsReader
 - [ ] StampCamera
