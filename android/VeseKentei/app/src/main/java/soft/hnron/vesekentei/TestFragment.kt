@@ -22,15 +22,15 @@ class TestFragment : Fragment() {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val answerZeroButton = view?.findViewById<Button>(R.id.fragment_test__button__answer_zero)
         val answerOneButton = view?.findViewById<Button>(R.id.fragment_test__button__answer_one)
         val answerTwoButton = view?.findViewById<Button>(R.id.fragment_test__button__answer_two)
         val answerThreeButton = view?.findViewById<Button>(R.id.fragment_test__button__answer_three)
-        val answerFourButton = view?.findViewById<Button>(R.id.fragment_test__button__answer_four)
 
+        answerZeroButton?.setOnClickListener {  }
         answerOneButton?.setOnClickListener {  }
         answerTwoButton?.setOnClickListener {  }
         answerThreeButton?.setOnClickListener {  }
-        answerFourButton?.setOnClickListener {  }
 
         val csvReader = CSVReader(InputStreamReader(resources.assets.open("csv/tests.csv")))
 
