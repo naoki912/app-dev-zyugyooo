@@ -6,6 +6,9 @@
     android:layout_height="match_parent"
     tools:context="soft.hnron.vesekentei.MainActivity">
 
-    <include layout="@layout/content_main" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/container" />
 
 </android.support.design.widget.CoordinatorLayout>
