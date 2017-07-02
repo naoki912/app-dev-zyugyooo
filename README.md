@@ -10,7 +10,6 @@ macとiOS環境を持っていないのでAndroidで実装
   - Minimum SDK -> API 19: Android 4.4 (KitKat) で統一
 - 動作確認した端末
   - Nexus5X (Android 7.1.1)
-  - Nexus7  (Android 6.0.1)
 
 ## アプリ一覧
 
