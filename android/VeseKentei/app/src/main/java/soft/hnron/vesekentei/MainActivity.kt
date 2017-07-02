@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity(),
         MainActivityFragment.MainActivityFragmentListener,
-        KenteiFragment.KenteiFragmentListener {
+        TestFragment.KenteiFragmentListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,8 +20,8 @@ class MainActivity : AppCompatActivity(),
     override fun onStartButtonClick() {
         supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.container, KenteiFragment.newInstance(), KenteiFragment.TAG)
-                .addToBackStack(KenteiFragment.TAG)
+                .replace(R.id.container, TestFragment.newInstance(), TestFragment.TAG)
+                .addToBackStack(TestFragment.TAG)
                 .commit()
     }
 }

@@ -4,24 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="soft.hnron.vesekentei.KenteiFragment">
+    tools:context="soft.hnron.vesetest.KenteiFragment">
 
     <ImageView
-        android:id="@+id/fragment_kentei__image_view__background"
+        android:id="@+id/fragment_test__image_view__background"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scaleType="fitStart"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/fragment_kentei__button__answer_one"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_test__button__answer_one"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/mondai_back_ground" />
 
     <TextView
-        android:id="@+id/fragment_kentei__text_view__problem_number"
+        android:id="@+id/fragment_test__text_view__problem_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Number"
@@ -40,7 +40,7 @@
         android:layout_marginEnd="8dp" />
 
     <TextView
-        android:id="@+id/fragment_kentei__text_view__problem_statement"
+        android:id="@+id/fragment_test__text_view__problem_statement"
         android:layout_width="314dp"
         android:layout_height="141dp"
         android:text="TextView"
@@ -49,7 +49,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/fragment_kentei__text_view__problem_number"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_test__text_view__problem_number"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
@@ -57,46 +57,46 @@
         android:layout_marginEnd="8dp" />
 
     <Button
-        android:id="@+id/fragment_kentei__button__answer_one"
+        android:id="@+id/fragment_test__button__answer_one"
         android:text="Button"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/fragment_kentei__button__answer_two"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_test__button__answer_two"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        style="@style/fragment_kentei_button"
+        style="@style/fragment_test_button"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp" />
 
     <Button
-        android:id="@+id/fragment_kentei__button__answer_two"
+        android:id="@+id/fragment_test__button__answer_two"
         android:text="Button"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/fragment_kentei__button__answer_three"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_test__button__answer_three"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        style="@style/fragment_kentei_button"
+        style="@style/fragment_test_button"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp" />
 
     <Button
-        android:id="@+id/fragment_kentei__button__answer_three"
+        android:id="@+id/fragment_test__button__answer_three"
         android:text="Button"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/fragment_kentei__button__answer_four"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_test__button__answer_four"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        style="@style/fragment_kentei_button"
+        style="@style/fragment_test_button"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp" />
 
     <Button
-        android:id="@+id/fragment_kentei__button__answer_four"
+        android:id="@+id/fragment_test__button__answer_four"
         android:text="Button"
         android:layout_marginBottom="60dp"
         android:layout_marginLeft="8dp"
@@ -104,7 +104,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        style="@style/fragment_kentei_button"
+        style="@style/fragment_test_button"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp" />
 
