@@ -8,7 +8,7 @@ import java.io.InputStreamReader
 
 class MainActivity : AppCompatActivity(),
         MainActivityFragment.MainActivityFragmentListener,
-        TestFragment.KenteiFragmentListener,
+        TestFragment.TestFragmentListener,
         ScoreFragment.ScoreFragmentListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {

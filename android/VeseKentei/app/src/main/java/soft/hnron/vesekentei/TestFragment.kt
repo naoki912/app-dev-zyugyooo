@@ -12,7 +12,7 @@ import soft.hnron.vesekentei.objects.Problem
 
 class TestFragment : Fragment() {
 
-    private var mListener: KenteiFragmentListener? = null
+    private var mListener: TestFragmentListener? = null
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -44,10 +44,10 @@ class TestFragment : Fragment() {
 
     override fun onAttach(context: Context?) {
         super.onAttach(context)
-        if (context is KenteiFragmentListener) {
+        if (context is TestFragmentListener) {
             mListener = context
         } else {
-            throw RuntimeException(context!!.toString() + " must implement KenteiFragmentListener")
+            throw RuntimeException(context!!.toString() + " must implement TestFragmentListener")
         }
     }
 
@@ -60,7 +60,7 @@ class TestFragment : Fragment() {
         mListener?.onSelectorClick()
     }
 
-    interface KenteiFragmentListener {
+    interface TestFragmentListener {
         fun onSelectorClick()
     }
 
