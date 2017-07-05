@@ -14,12 +14,12 @@ class TestFragment : Fragment() {
 
     private var mListener: TestFragmentListener? = null
 
-    private var problemNumberTextView: TextView? = null
-    private var problemStatementTextView: TextView? = null
-    private var selectZeroButton: Button? = null
-    private var selectOneButton: Button? = null
-    private var selectTwoButton: Button? = null
-    private var selectThreeButton: Button? = null
+    private var mProblemNumberTextView: TextView? = null
+    private var mProblemStatementTextView: TextView? = null
+    private var mSelectZeroButton: Button? = null
+    private var mSelectOneButton: Button? = null
+    private var mSelectTwoButton: Button? = null
+    private var mSelectThreeButton: Button? = null
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -29,24 +29,19 @@ class TestFragment : Fragment() {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        problemNumberTextView = view?.findViewById<TextView>(R.id.fragment_test__text_view__problem_number)
-        problemStatementTextView = view?.findViewById<TextView>(R.id.fragment_test__text_view__problem_statement)
-        selectZeroButton = view?.findViewById<Button>(R.id.fragment_test__button__select_zero)
-        selectOneButton = view?.findViewById<Button>(R.id.fragment_test__button__select_one)
-        selectTwoButton = view?.findViewById<Button>(R.id.fragment_test__button__select_two)
-        selectThreeButton = view?.findViewById<Button>(R.id.fragment_test__button__select_three)
+        mProblemNumberTextView = view?.findViewById<TextView>(R.id.fragment_test__text_view__problem_number)
+        mProblemStatementTextView = view?.findViewById<TextView>(R.id.fragment_test__text_view__problem_statement)
+        mSelectZeroButton = view?.findViewById<Button>(R.id.fragment_test__button__select_zero)
+        mSelectOneButton = view?.findViewById<Button>(R.id.fragment_test__button__select_one)
+        mSelectTwoButton = view?.findViewById<Button>(R.id.fragment_test__button__select_two)
+        mSelectThreeButton = view?.findViewById<Button>(R.id.fragment_test__button__select_three)
 
-        selectZeroButton?.setOnClickListener { v -> onSelectorClick(v.tag.toString().toInt()) }
-        selectOneButton?.setOnClickListener { v -> onSelectorClick(v.tag.toString().toInt()) }
-        selectTwoButton?.setOnClickListener { v -> onSelectorClick(v.tag.toString().toInt()) }
-        selectThreeButton?.setOnClickListener { v -> onSelectorClick(v.tag.toString().toInt()) }
+        mSelectZeroButton?.setOnClickListener { v -> onSelectorClick(v.tag.toString().toInt()) }
+        mSelectOneButton?.setOnClickListener { v -> onSelectorClick(v.tag.toString().toInt()) }
+        mSelectTwoButton?.setOnClickListener { v -> onSelectorClick(v.tag.toString().toInt()) }
+        mSelectThreeButton?.setOnClickListener { v -> onSelectorClick(v.tag.toString().toInt()) }
 
-        problemNumberTextView?.text = Problem.problemNumber.toString()
-        problemStatementTextView?.text = Problem.statement
-        selectZeroButton?.text = Problem.selectZero
-        selectOneButton?.text = Problem.selectOne
-        selectTwoButton?.text = Problem.selectTwo
-        selectThreeButton?.text = Problem.selectThree
+        updateProblemDisplay()
     }
 
     override fun onAttach(context: Context?) {
@@ -61,6 +56,15 @@ class TestFragment : Fragment() {
     override fun onDetach() {
         super.onDetach()
         mListener = null
+    }
+
+    fun updateProblemDisplay() {
+        mProblemNumberTextView?.text = Problem.problemNumber.toString()
+        mProblemStatementTextView?.text = Problem.statement
+        mSelectZeroButton?.text = Problem.selectZero
+        mSelectOneButton?.text = Problem.selectOne
+        mSelectTwoButton?.text = Problem.selectTwo
+        mSelectThreeButton?.text = Problem.selectThree
     }
 
     fun onSelectorClick(selectorNumber: Int) {
