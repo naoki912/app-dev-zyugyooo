@@ -8,7 +8,8 @@ import java.io.InputStreamReader
 
 class MainActivity : AppCompatActivity(),
         MainActivityFragment.MainActivityFragmentListener,
-        TestFragment.KenteiFragmentListener {
+        TestFragment.KenteiFragmentListener,
+        ScoreFragment.ScoreFragmentListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +28,14 @@ class MainActivity : AppCompatActivity(),
                 .beginTransaction()
                 .replace(R.id.container, TestFragment.newInstance(), TestFragment.TAG)
                 .addToBackStack(TestFragment.TAG)
+                .commit()
+    }
+
+    override fun onSelectorClick() {
+        supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.container, ScoreFragment.newInstance(), ScoreFragment.TAG)
+                .addToBackStack(ScoreFragment.TAG)
                 .commit()
     }
 }

@@ -56,9 +56,13 @@ class TestFragment : Fragment() {
         mListener = null
     }
 
-    fun onSelectorClick(selectorNumber: Int) { }
+    fun onSelectorClick(selectorNumber: Int) {
+        mListener?.onSelectorClick()
+    }
 
-    interface KenteiFragmentListener { }
+    interface KenteiFragmentListener {
+        fun onSelectorClick()
+    }
 
     companion object {
         fun newInstance(): TestFragment = TestFragment()
