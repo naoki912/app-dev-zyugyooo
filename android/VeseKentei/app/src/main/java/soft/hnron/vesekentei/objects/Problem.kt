@@ -18,19 +18,19 @@ object Problem {
         get() = problem?.get(1)?.toInt()
         private set
 
-    var selectorZero: String? = null
+    var selectZero: String? = null
         get() = problem?.get(2)
         private set
 
-    var selectorOne: String? = null
+    var selectOne: String? = null
         get() = problem?.get(3)
         private set
 
-    var selectorTwo: String? = null
+    var selectTwo: String? = null
         get() = problem?.get(4)
         private set
 
-    var selectorThree: String? = null
+    var selectThree: String? = null
         get() = problem?.get(5)
         private set
 

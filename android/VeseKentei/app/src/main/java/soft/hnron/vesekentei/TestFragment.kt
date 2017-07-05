@@ -14,6 +14,13 @@ class TestFragment : Fragment() {
 
     private var mListener: TestFragmentListener? = null
 
+    private var problemNumberTextView: TextView? = null
+    private var problemStatementTextView: TextView? = null
+    private var selectZeroButton: Button? = null
+    private var selectOneButton: Button? = null
+    private var selectTwoButton: Button? = null
+    private var selectThreeButton: Button? = null
+
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         return inflater!!.inflate(R.layout.fragment_test, container, false)
@@ -22,24 +29,24 @@ class TestFragment : Fragment() {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val problemNumberTextView = view?.findViewById<TextView>(R.id.fragment_test__text_view__problem_number)
-        val problemStatementTextView = view?.findViewById<TextView>(R.id.fragment_test__text_view__problem_statement)
-        val answerZeroButton = view?.findViewById<Button>(R.id.fragment_test__button__answer_zero)
-        val answerOneButton = view?.findViewById<Button>(R.id.fragment_test__button__answer_one)
-        val answerTwoButton = view?.findViewById<Button>(R.id.fragment_test__button__answer_two)
-        val answerThreeButton = view?.findViewById<Button>(R.id.fragment_test__button__answer_three)
+        problemNumberTextView = view?.findViewById<TextView>(R.id.fragment_test__text_view__problem_number)
+        problemStatementTextView = view?.findViewById<TextView>(R.id.fragment_test__text_view__problem_statement)
+        selectZeroButton = view?.findViewById<Button>(R.id.fragment_test__button__select_zero)
+        selectOneButton = view?.findViewById<Button>(R.id.fragment_test__button__select_one)
+        selectTwoButton = view?.findViewById<Button>(R.id.fragment_test__button__select_two)
+        selectThreeButton = view?.findViewById<Button>(R.id.fragment_test__button__select_three)
 
-        answerZeroButton?.setOnClickListener { v -> onSelectorClick(v.tag.toString().toInt()) }
-        answerOneButton?.setOnClickListener { v -> onSelectorClick(v.tag.toString().toInt()) }
-        answerTwoButton?.setOnClickListener { v -> onSelectorClick(v.tag.toString().toInt()) }
-        answerThreeButton?.setOnClickListener { v -> onSelectorClick(v.tag.toString().toInt()) }
+        selectZeroButton?.setOnClickListener { v -> onSelectorClick(v.tag.toString().toInt()) }
+        selectOneButton?.setOnClickListener { v -> onSelectorClick(v.tag.toString().toInt()) }
+        selectTwoButton?.setOnClickListener { v -> onSelectorClick(v.tag.toString().toInt()) }
+        selectThreeButton?.setOnClickListener { v -> onSelectorClick(v.tag.toString().toInt()) }
 
         problemNumberTextView?.text = Problem.problemNumber.toString()
         problemStatementTextView?.text = Problem.statement
-        answerZeroButton?.text = Problem.selectorZero
-        answerOneButton?.text = Problem.selectorOne
-        answerTwoButton?.text = Problem.selectorTwo
-        answerThreeButton?.text = Problem.selectorThree
+        selectZeroButton?.text = Problem.selectZero
+        selectOneButton?.text = Problem.selectOne
+        selectTwoButton?.text = Problem.selectTwo
+        selectThreeButton?.text = Problem.selectThree
     }
 
     override fun onAttach(context: Context?) {
