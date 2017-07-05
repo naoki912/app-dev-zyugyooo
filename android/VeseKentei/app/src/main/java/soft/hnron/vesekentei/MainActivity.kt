@@ -2,6 +2,9 @@ package soft.hnron.vesekentei
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.opencsv.CSVReader
+import soft.hnron.vesekentei.objects.Problem
+import java.io.InputStreamReader
 
 class MainActivity : AppCompatActivity(),
         MainActivityFragment.MainActivityFragmentListener,
@@ -15,6 +18,8 @@ class MainActivity : AppCompatActivity(),
                 .beginTransaction()
                 .add(R.id.container, MainActivityFragment.newInstance())
                 .commit()
+
+        Problem.initialization(CSVReader(InputStreamReader( resources.assets.open("csv/tests.csv"))).toList())
     }
 
     override fun onStartButtonClick() {

@@ -7,8 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import com.opencsv.CSVReader
-import java.io.InputStreamReader
+import android.widget.TextView
+import soft.hnron.vesekentei.objects.Problem
 
 class TestFragment : Fragment() {
 
@@ -22,23 +22,24 @@ class TestFragment : Fragment() {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val problemNumberTextView = view?.findViewById<TextView>(R.id.fragment_test__text_view__problem_number)
+        val problemStatementTextView = view?.findViewById<TextView>(R.id.fragment_test__text_view__problem_statement)
         val answerZeroButton = view?.findViewById<Button>(R.id.fragment_test__button__answer_zero)
         val answerOneButton = view?.findViewById<Button>(R.id.fragment_test__button__answer_one)
         val answerTwoButton = view?.findViewById<Button>(R.id.fragment_test__button__answer_two)
         val answerThreeButton = view?.findViewById<Button>(R.id.fragment_test__button__answer_three)
 
-        answerZeroButton?.setOnClickListener {  }
-        answerOneButton?.setOnClickListener {  }
-        answerTwoButton?.setOnClickListener {  }
-        answerThreeButton?.setOnClickListener {  }
+        answerZeroButton?.setOnClickListener { v -> selectorTapped(v.tag.toString().toInt()) }
+        answerOneButton?.setOnClickListener { v -> selectorTapped(v.tag.toString().toInt()) }
+        answerTwoButton?.setOnClickListener { v -> selectorTapped(v.tag.toString().toInt()) }
+        answerThreeButton?.setOnClickListener { v -> selectorTapped(v.tag.toString().toInt()) }
 
-        val csvReader = CSVReader(InputStreamReader(resources.assets.open("csv/tests.csv")))
-
-        for (questions in csvReader.readAll()) {
-            for (item in questions) {
-                println(item.toString())
-            }
-        }
+        problemNumberTextView?.text = Problem.problemNumber.toString()
+        problemStatementTextView?.text = Problem.statement
+        answerZeroButton?.text = Problem.selectorZero
+        answerOneButton?.text = Problem.selectorOne
+        answerTwoButton?.text = Problem.selectorTwo
+        answerThreeButton?.text = Problem.selectorThree
     }
 
     override fun onAttach(context: Context?) {
@@ -54,6 +55,8 @@ class TestFragment : Fragment() {
         super.onDetach()
         mListener = null
     }
+
+    fun selectorTapped(selectorNumber: Int) { }
 
     interface KenteiFragmentListener { }
 
