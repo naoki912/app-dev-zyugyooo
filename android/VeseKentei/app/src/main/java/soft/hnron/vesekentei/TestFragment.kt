@@ -29,10 +29,10 @@ class TestFragment : Fragment() {
         val answerTwoButton = view?.findViewById<Button>(R.id.fragment_test__button__answer_two)
         val answerThreeButton = view?.findViewById<Button>(R.id.fragment_test__button__answer_three)
 
-        answerZeroButton?.setOnClickListener { v -> selectorTapped(v.tag.toString().toInt()) }
-        answerOneButton?.setOnClickListener { v -> selectorTapped(v.tag.toString().toInt()) }
-        answerTwoButton?.setOnClickListener { v -> selectorTapped(v.tag.toString().toInt()) }
-        answerThreeButton?.setOnClickListener { v -> selectorTapped(v.tag.toString().toInt()) }
+        answerZeroButton?.setOnClickListener { v -> onSelectorClick(v.tag.toString().toInt()) }
+        answerOneButton?.setOnClickListener { v -> onSelectorClick(v.tag.toString().toInt()) }
+        answerTwoButton?.setOnClickListener { v -> onSelectorClick(v.tag.toString().toInt()) }
+        answerThreeButton?.setOnClickListener { v -> onSelectorClick(v.tag.toString().toInt()) }
 
         problemNumberTextView?.text = Problem.problemNumber.toString()
         problemStatementTextView?.text = Problem.statement
@@ -56,7 +56,7 @@ class TestFragment : Fragment() {
         mListener = null
     }
 
-    fun selectorTapped(selectorNumber: Int) { }
+    fun onSelectorClick(selectorNumber: Int) { }
 
     interface KenteiFragmentListener { }
 
