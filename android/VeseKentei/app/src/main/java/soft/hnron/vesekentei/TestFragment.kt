@@ -68,6 +68,11 @@ class TestFragment : Fragment() {
     }
 
     fun onSelectorClick(selectorNumber: Int) {
+        // 解答を表示させる
+        // updateDisplay
+
+        Problem.next()
+
         mListener?.onSelectorClick()
     }
 

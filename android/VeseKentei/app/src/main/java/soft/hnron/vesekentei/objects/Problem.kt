@@ -46,6 +46,9 @@ object Problem {
         get() = field
         private set
 
+    var isProblemEnded: Boolean = false
+        get() = field
+        private set
 
     fun initialization(problems: List<Array<String>>) {
         this.problems = problems
@@ -60,6 +63,7 @@ object Problem {
             problemNumber?.plus(1)
             return problem
         } else {
+            isProblemEnded = true
             return null
         }
     }

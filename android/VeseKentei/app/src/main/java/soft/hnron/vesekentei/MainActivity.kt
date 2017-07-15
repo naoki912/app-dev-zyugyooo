@@ -32,10 +32,12 @@ class MainActivity : AppCompatActivity(),
     }
 
     override fun onSelectorClick() {
-        supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.container, ScoreFragment.newInstance(), ScoreFragment.TAG)
-                .addToBackStack(ScoreFragment.TAG)
-                .commit()
+        if (Problem.isProblemEnded) {
+            supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.container, ScoreFragment.newInstance(), ScoreFragment.TAG)
+                    .addToBackStack(ScoreFragment.TAG)
+                    .commit()
+        }
     }
 }
