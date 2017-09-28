@@ -19,6 +19,6 @@ macとiOS環境を持っていないのでAndroidで実装
 - [x] [Cowbell](android/Cowbell)
 - [x] [WinePiano](android/WinePiano)
 - [x] [Calculator](android/Calculator)
-- [ ] VeseKentei
+- [ ] VeseKentei(android/VeseKentei)
 - [ ] NewsReader
 - [ ] StampCamera
